@@ -9,13 +9,14 @@ function processData(input) {
       let wordArr = inputArr[i].split("");
       let oddStr = "";
       let evenStr = "";
-        wordArr.forEach(item => {
-            if (wordArr.indexOf(item)%2===0) {
-                evenStr = evenStr + item
+
+        for (let j=0; j<wordArr.length; j++) {
+            if (j%2===0) {
+                evenStr = evenStr + wordArr[j];
             } else {
-                oddStr = oddStr + item
+                oddStr = oddStr + wordArr[j];
             }
-        })
+        }
      console.log(evenStr + " " + oddStr);
     }
 } 
