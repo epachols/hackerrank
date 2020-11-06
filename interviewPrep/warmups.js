@@ -39,3 +39,25 @@ function countingValleys(steps, path) {
 
 // ============================================
 
+function jumpingOnClouds(c) {
+    let len = c.length;
+    let jumps = 0;
+    let currentCloudIdx = 0;
+    
+    do {
+        if (c[currentCloudIdx+1] === undefined) {
+            return(jumps)
+        } else if (c[currentCloudIdx + 2]===0) {
+            jumps++;
+            currentCloudIdx +=2;
+            console.log('doublejump!');
+        } else if (c[currentCloudIdx + 1]===0) {
+            jumps++;
+            currentCloudIdx++;
+            console.log('singlejump!');
+        }
+    }
+    while (currentCloudIdx < len);
+    }
+
+    jumpingOnClouds([0,0,1,0,0,1,0]) //expect 4
