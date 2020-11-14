@@ -16,6 +16,6 @@ arr1 = [3,3,2,1,3]; //expect 2.
 
 
 function equalizeArray(arr) {
-
-
+// do something
+// return an integer designated as the smallest number of deletes to equalize the input arraycd 
 }
