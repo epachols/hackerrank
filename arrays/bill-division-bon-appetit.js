@@ -16,8 +16,7 @@ function bonAppetit(bill, k, b) {
     );
     let fairSplit = (fairTotal - annasUneaten) / 2
 
-    // console.log(b);
-    // console.log(fairSplit);
+
   if (b-fairSplit === 0) {
       return console.log("Bon Appetit");
   } else {
