@@ -28,6 +28,7 @@ let b = [2,5,1,4,3] //expect "Too Chaotic"
 
 function minimumBribes(q) {
     // what do we care about?
+    let movesMap = new Map();
     
     for (let person of q) {
         // walk backward through the list
@@ -41,3 +42,7 @@ function minimumBribes(q) {
 
 minimumBribes(a);
 minimumBribes(b);
+
+
+let c = [1,2,3,4,5,6] // with 6 bribing twice, [1,2,3,6,4,5] 6 is at index 3, which is val's idx + 2 > val > val's idx - 2
+// if 6 bribes twice, 4 bribes twice
