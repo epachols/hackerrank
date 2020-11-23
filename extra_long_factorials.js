@@ -28,14 +28,13 @@ function extraLongFactorials(n) {
     helperFact(answerFact, savedN);
 };
 
-function helperFact(factTotal, num) {
-    if (num === 1n) {
-        return console.log(factTotal.toString());
+function helperFact(factorialTotal, bigNum) {
+    if (bigNum === 1n) {
+        return console.log(factorialTotal.toString());
     }
-    let bigNum = BigInt(num);
-    factTotal = factTotal * bigNum;
-    num-=1n;
-    return helperFact(factTotal, num);
+    factorialTotal = factorialTotal * bigNum;
+    bigNum-=1n;
+    return helperFact(factorialTotal, bigNum);
 };
 
 extraLongFactorials(5);
