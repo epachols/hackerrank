@@ -18,31 +18,31 @@
 
 // OR: COULD walk the array. take each individual item and see if it is less than 3 spaces from where it started... 
 
-// but what about solutions that swap backward, and not in a straight line, to work? would have to keep track of every single move, maybe in a hashmap?
-
 //  a bribe involves the briber moving left, and the bribee moving right.
-
 // arrays: 
-let a = [2,1,5,3,4] //expect 3
-let b = [2,5,1,4,3] //expect "Too Chaotic"
+let a = [2,1,5,3,4] // expect 3
+let b = [2,5,1,4,3] // expect "Too Chaotic"
+let c = [1,4,2,3,6,5] // expect 3
+
 
 function minimumBribes(q) {
-    // what do we care about?
-    let movesMap = new Map();
-    
-    for (let person of q) {
-        // walk backward through the list
-        // check if a person is "near their spot" or within 2 of i+1 
-        // if not, escape! return Too Chaotic,
-        //if so....
+    let bribeCount = 0;
+    let chaotic = false;
 
+    for (let ii=q.length-1; ii>=0; ii--) {
+        // if we are more than 2 steps away, we chaotic brah
+        if (q[ii] - ii > 3) chaotic = true
+        // then check the numbers before it (we only need to go two back, which saves this from being quadratic time.) ;)
+        for (let jj=q[ii]-2; jj<ii; jj++) {
+            if (q[jj] > q[ii]) {
+                bribeCount++;
+            }
+        }
     }
-    // return EITHER: min# bribes, or "Too Chaotic" if you can't get there
+    chaotic ? console.log("Too chaotic") : console.log(bribeCount)
 }
 
 minimumBribes(a);
 minimumBribes(b);
+minimumBribes(c);
 
-
-let c = [1,2,3,4,5,6] // with 6 bribing twice, [1,2,3,6,4,5] 6 is at index 3, which is val's idx + 2 > val > val's idx - 2
-// if 6 bribes twice, 4 bribes twice
