@@ -10,6 +10,8 @@ let string1 = "do or do not, there is no try";
 
 // do while not using reverse, treat as an array of characters;
 
+// take in an array of characters representing a split string and reverse the word order by space separations.
+
 function reverseTheWords(array) {
   let response = [];
   for (let i = 0; i < array.length; i++) {
@@ -24,7 +26,7 @@ function reverseTheWords(array) {
     }
     if (currentSubst.length) response.unshift(...currentSubst);
   }
-  return response.join("");
+  return response;
 }
 
 let string2 = "there is no try, do or do not";
@@ -60,7 +62,10 @@ let arr2 = [
   "t",
 ];
 
+console.log(`\n\n`);
 console.log(reverseTheWords(arr2));
+console.log(reverseTheWords(arr2).join(""));
+console.log(`\n\n`);
 
 // let testArr = ["d", "o", " ", "o", "r", " "];
 // d, o, -    response = ["d", "o", " " ]
